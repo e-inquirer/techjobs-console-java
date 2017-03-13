@@ -113,15 +113,14 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
         for (HashMap<String, String> jobEntries : someJobs) {
-//            for (Map.Entry<String, String> jobData : jobEntries) {
-//            for (Map.Entry<String, String> jobData : jobEntries) {
-            for (HashMap.Entry<String, String> jobEntry : jobEntries.entrySet()) {
+            System.out.println("\n*****");
 
-//            System.out.println(student.getKey() + " (" + student.getValue() + ")");
+            for (HashMap.Entry<String, String> jobEntry : jobEntries.entrySet()) {
                 System.out.println(jobEntry);
             }
-        }
 
-//        System.out.println("\n*****\n" + "<printJobs-TEXT-STUB" + "\n*****\n");
+            System.out.println("*****\n");
+        }
     }
+
 }
