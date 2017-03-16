@@ -140,6 +140,7 @@ public class JobData {
 
                 if (Pattern.compile(Pattern.quote(value), Pattern.CASE_INSENSITIVE).matcher(aValue).find()) {
                     jobs.add(row);
+                    break;
                 }
             }
         }
