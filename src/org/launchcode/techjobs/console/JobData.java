@@ -1,5 +1,6 @@
 package org.launchcode.techjobs.console;
 
+//import com.sun.xml.internal.ws.util.StringUtils;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -11,6 +12,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Pattern;
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * Created by LaunchCode
  */
@@ -134,11 +137,8 @@ public class JobData {
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
-
-            for (HashMap.Entry<String, String> column : row.entrySet()) {
-                String aValue = column.getValue();
-
-                if (Pattern.compile(Pattern.quote(value), Pattern.CASE_INSENSITIVE).matcher(aValue).find()) {
+             for (String column : row.values()) {
+                if (org.apache.commons.lang3.StringUtils.containsIgnoreCase(column, value)) {
                     jobs.add(row);
                     break;
                 }
